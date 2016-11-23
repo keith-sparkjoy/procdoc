@@ -1,0 +1,5 @@
+mobile-ui/app/build/
+mobile-ui/app/node_modules
+mobile-ui/app/ios
+**/npm-debug.log
+.nrepl-port

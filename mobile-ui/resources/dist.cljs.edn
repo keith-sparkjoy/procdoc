@@ -1,0 +1,4 @@
+{:require  [procdoc.mobile.core]
+ :init-fns [procdoc.mobile.core/main]
+ :compiler-options {:optimizations :advanced
+                    :externs ["externs.js" "react.ext.js" "react.native.ext.js"]}}
