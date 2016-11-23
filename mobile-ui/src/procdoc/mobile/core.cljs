@@ -1,6 +1,7 @@
 (ns procdoc.mobile.core
   (:require [reagent.core :as reagent]
-            [procdoc.mobile.nav :refer [my-navigator]]))
+            [procdoc.mobile.state :refer [!state]]
+            [procdoc.mobile.my-navigator :refer [my-navigator]]))
 
 (enable-console-print!)
 
@@ -14,8 +15,6 @@
 ;; (the directory that contains package.json) or below.
 ;;
 ;; We use `defonce' to prevent errors on subsequent reloads.
-
-(defonce !state (reagent/atom 0))
 
 (defn root-view
   []
