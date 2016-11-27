@@ -19,7 +19,6 @@
    (let [sp (child-path parent-sp :proc-list)
          {:keys [proc-ids]} (get-state sp)]
      (for [id proc-ids]
-       [touchable-highlight
-        {:on-press (nav-to-proc nh parent-sp id)}
-        [text id]
-        ]))])
+       ^{:key id} [touchable-highlight
+            {:on-press (nav-to-proc nh parent-sp id)}
+            [text id]]))])

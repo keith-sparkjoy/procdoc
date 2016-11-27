@@ -9,13 +9,12 @@
   [nh sp]
   [view
    (let [{:keys [proc]} (get-state sp)]
-     (for [step (:steps proc)]
-       [text (:sd step)]))])
+     (for [[i s] (map-indexed (fn [i s] [i s]) (:steps proc))]
+       ^{:key i} [text (:sd s)]))])
 
 (defn proc-player
   [nh parent-sp]
   (let [sp (child-path parent-sp :proc-player)]
-    (.log js/console ":) proc-player render")
     [view
      (if-let [proc-id (:loading (get-state sp))]
        [text "Loading " proc-id]

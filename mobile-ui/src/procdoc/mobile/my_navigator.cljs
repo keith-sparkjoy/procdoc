@@ -31,9 +31,9 @@
 (defn right-button
   [_ _ _ _]
   (reagent/as-element
-   [text
-    {:style {:color "#FFF"}}
-    "Done"]))
+    [text
+     {:style {:color "#FFF"}}
+     "Done"]))
 
 (defn my-navigator
   [sp]
@@ -46,7 +46,7 @@
                       (reagent/as-element
                        [view
                         {:style {:top 40}}
-                        (renderer (->NavHelper nav route) sp)])))
+                        [renderer (->NavHelper nav route) sp]])))
     :navigation-bar (reagent/as-element
                      [navigation-bar
                       ;; Note the use of PascalCase in these selectors
