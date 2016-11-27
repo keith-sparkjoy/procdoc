@@ -4,7 +4,7 @@
 
 (defn root-path
   [a]
-  (map->StatePath {:root a}))
+  (map->StatePath {:root a :path []}))
 
 (defn child-path
   [{:keys [root path]} key]
@@ -19,3 +19,8 @@
 (defn update-state!
   [{:keys [root path]} f & args]
   (swap! root #(update-in % path f args)))
+
+(defn assoc-state!
+  [{:keys [root path]} x]
+;;  (.log js/console (str ":) assoc-state " root path))
+  (swap! root #(assoc-in % path x)))
