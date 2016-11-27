@@ -5,7 +5,7 @@
     [text view touchable-highlight]]))
 
 (defn proc-list
-  [route nav sp]
+  [nh sp]
   [view
    (let [sp (child-path sp :proc-list)
          {:keys [proc-ids]} (get-state sp)]

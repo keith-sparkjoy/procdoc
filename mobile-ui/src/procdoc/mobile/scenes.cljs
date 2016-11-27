@@ -4,12 +4,12 @@
    [procdoc.mobile.proc-list :refer [proc-list]]))
 
 (defn default-renderer
-  [route nav sp]
+  [nh sp]
   [text
    {:style {:background-color "#C00"
             :color "#0C0"
             :padding 10}}
-   (str "No renderer for route: " route)])
+   (str "No renderer for route: " (:route nh))])
 
 (defn renderer-for
   [id]

@@ -1,5 +1,6 @@
 (ns procdoc.mobile.my-navigator
   (:require [reagent.core :as reagent]
+            [procdoc.mobile.nav-helper :refer [->NavHelper]]
             [procdoc.mobile.scenes :refer [renderer-for]]
             [procdoc.mobile.react-classes :refer
              [navigator navigation-bar touchable-highlight text view]]))
@@ -45,7 +46,7 @@
                       (reagent/as-element
                        [view
                         {:style {:top 40}}
-                        (renderer route nav sp)])))
+                        (renderer (->NavHelper nav route) sp)])))
     :navigation-bar (reagent/as-element
                      [navigation-bar
                       ;; Note the use of PascalCase in these selectors
