@@ -35,7 +35,7 @@
     "Done"]))
 
 (defn my-navigator
-  []
+  [sp]
   [navigator
    {:initial-route (clj->js {:title "Processes" :id "proc-list"})
     :style {:background-color "#FFA"}
@@ -45,7 +45,7 @@
                       (reagent/as-element
                        [view
                         {:style {:top 40}}
-                        (renderer route nav)])))
+                        (renderer route nav sp)])))
     :navigation-bar (reagent/as-element
                      [navigation-bar
                       ;; Note the use of PascalCase in these selectors

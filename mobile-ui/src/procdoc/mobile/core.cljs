@@ -1,6 +1,6 @@
 (ns procdoc.mobile.core
   (:require [reagent.core :as reagent]
-            [procdoc.mobile.state :refer [!state]]
+            [procdoc.mobile.state :as state]
             [procdoc.mobile.my-navigator :refer [my-navigator]]))
 
 (enable-console-print!)
@@ -18,7 +18,7 @@
 
 (defn root-view
   []
-  [my-navigator])
+  [my-navigator state/root])
 
 (defn root-container
   "Wraps root-view. This is to make sure live reloading using boot-reload and
@@ -36,7 +36,7 @@
 
 (defn on-js-reload
   []
-  (println "on-js-reload. state:" (pr-str @!state))
+  (println "on-js-reload. state:" (pr-str @state/!state))
 
   ;; Force re-render
   ;;

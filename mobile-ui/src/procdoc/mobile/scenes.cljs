@@ -4,7 +4,7 @@
    [procdoc.mobile.proc-list :refer [proc-list]]))
 
 (defn default-renderer
-  [route nav]
+  [route nav sp]
   [text
    {:style {:background-color "#C00"
             :color "#0C0"

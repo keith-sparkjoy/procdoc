@@ -1,12 +1,13 @@
 (ns procdoc.mobile.proc-list
   (:require
-   [procdoc.mobile.state :refer [!state]]
+   [procdoc.mobile.state-path :refer [child-path get-state]]
    [procdoc.mobile.react-classes :refer
     [text view touchable-highlight]]))
 
 (defn proc-list
-  [route nav]
+  [route nav sp]
   [view
-   (let [{:keys [proc-ids]} (:proc-list @!state)]
+   (let [sp (child-path sp :proc-list)
+         {:keys [proc-ids]} (get-state sp)]
      (for [id proc-ids]
        [text id]))])
